@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.uy.atiliator.sie.inspeccion",
+      "nativeLanguage": "es"
+    },
+    "jhipsterVersion": "6.8.0",
+    "applicationType": "microservice",
+    "baseName": "inspeccion",
+    "packageName": "com.uy.atiliator.sie.inspeccion",
+    "packageFolder": "com/uy/atiliator/sie/inspeccion",
+    "serverPort": "8081",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": "kafka",
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": true,
+    "jwtSecretKey": "ZmQ1OGMzMGY4ZmFkZWNlOTU0OWZlZjcwMjRhNjhkMzZjMmJlZTdjNjk2MWM2MDU4MTBiMTlkMWNhOTEzZDg2MTQxNmE3YzU1OGM2MmU3MzU2MWQwMDM1YTRjZjM0YzI4Mjg0ODgwNzY2MDc2ZjVhYjJmYmI1MTkyNGUyMzRiMTE=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1584924147297,
+    "testFrameworks": ["gatling"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "es",
+    "languages": ["es", "zh-cn", "en", "pt-br"],
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
