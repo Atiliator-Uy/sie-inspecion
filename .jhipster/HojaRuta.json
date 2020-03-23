@@ -1,0 +1,55 @@
+{
+    "name": "HojaRuta",
+    "fields": [
+        {
+            "fieldName": "tipoInspeccion",
+            "fieldType": "TipoInspeccion",
+            "fieldValues": "CARRETERA_VIAL,CARRETERA_POLICIAL,AGRICOLA,GANADERA"
+        },
+        {
+            "fieldName": "fecha",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "fechaHoraUTC",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "titulo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "realizado",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "priodidad",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "lugarGPS",
+            "otherEntityRelationshipName": "hojaruta",
+            "relationshipName": "lugarGPS",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200323011500",
+    "entityTableName": "hoja_ruta",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "inspeccion",
+    "applications": "*",
+    "microserviceName": "inspeccion"
+}

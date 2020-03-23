@@ -1,0 +1,66 @@
+/* Microservicio inspeciones */
+/* Entity */
+entity Inspector {
+	idUser String,
+    login String,
+    nombre String
+}
+
+entity HojaRuta {
+	tipoInspeccion TipoInspeccion,
+    fecha LocalDate,
+    fechaHoraUTC ZonedDateTime,
+    titulo String,
+    descripcion String,
+    realizado Boolean,
+    priodidad Integer
+}
+
+entity LugarGPS  {
+	altitud String,
+    latitud String,
+    longitud String
+    nombre String
+}
+
+entity Inspeccion {
+    observacion String,
+    tipoInspeccion TipoInspeccion,
+    recomendacion String,
+    fecha LocalDate,
+    fechaHoraUTC ZonedDateTime
+}
+
+entity Evidencia {
+	nombre String,
+    descripcion String,
+    foto Blob,
+    url String
+}
+
+/* Enum */
+enum TipoInspeccion {
+	CARRETERA_VIAL,
+    CARRETERA_POLICIAL,
+	AGRICOLA,
+	GANADERA
+}
+
+/* Relationship */
+relationship OneToMany {
+    LugarGPS{hojaruta} to HojaRuta,
+    LugarGPS{inspecion} to Inspeccion,
+    Inspeccion{evidencia} to Evidencia
+}
+
+relationship ManyToOne {
+	Inspeccion{inspector} to Inspector
+}
+
+paginate Inspector, HojaRuta, LugarGPS, Inspeccion, Evidencia with pagination
+dto * with mapstruct
+service all with serviceClass
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

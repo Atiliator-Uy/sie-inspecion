@@ -14,6 +14,14 @@
     <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200323011400_added_entity_Inspector.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200323011500_added_entity_HojaRuta.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200323011600_added_entity_LugarGPS.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200323011700_added_entity_Inspeccion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200323011800_added_entity_Evidencia.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20200323011500_added_entity_constraints_HojaRuta.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200323011700_added_entity_constraints_Inspeccion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200323011800_added_entity_constraints_Evidencia.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

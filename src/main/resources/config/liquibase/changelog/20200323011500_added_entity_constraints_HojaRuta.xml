@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <!--
+        Added the constraints for entity HojaRuta.
+    -->
+    <changeSet id="20200323011500-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="lugargps_id"
+                                 baseTableName="hoja_ruta"
+                                 constraintName="fk_hoja_ruta_lugargps_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="lugar_gps"/>
+
+    </changeSet>
+</databaseChangeLog>

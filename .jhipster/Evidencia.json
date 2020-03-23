@@ -1,0 +1,43 @@
+{
+    "name": "Evidencia",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "foto",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "url",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "inspeccion",
+            "otherEntityRelationshipName": "evidencia",
+            "relationshipName": "inspeccion",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200323011800",
+    "entityTableName": "evidencia",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "inspeccion",
+    "applications": "*",
+    "microserviceName": "inspeccion"
+}

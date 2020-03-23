@@ -1,0 +1,60 @@
+{
+    "name": "Inspeccion",
+    "fields": [
+        {
+            "fieldName": "observacion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipoInspeccion",
+            "fieldType": "TipoInspeccion",
+            "fieldValues": "CARRETERA_VIAL,CARRETERA_POLICIAL,AGRICOLA,GANADERA"
+        },
+        {
+            "fieldName": "recomendacion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fecha",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "fechaHoraUTC",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "evidencia",
+            "otherEntityRelationshipName": "inspeccion",
+            "relationshipName": "evidencia"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "inspector",
+            "otherEntityRelationshipName": "inspeccion",
+            "relationshipName": "inspector",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "lugarGPS",
+            "otherEntityRelationshipName": "inspecion",
+            "relationshipName": "lugarGPS",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200323011700",
+    "entityTableName": "inspeccion",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "inspeccion",
+    "applications": "*",
+    "microserviceName": "inspeccion"
+}

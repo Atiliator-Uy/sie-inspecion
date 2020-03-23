@@ -1,0 +1,47 @@
+{
+    "name": "LugarGPS",
+    "fields": [
+        {
+            "fieldName": "altitud",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "latitud",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "longitud",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "hojaRuta",
+            "otherEntityRelationshipName": "lugarGPS",
+            "relationshipName": "hojaruta"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "inspeccion",
+            "otherEntityRelationshipName": "lugarGPS",
+            "relationshipName": "inspecion"
+        }
+    ],
+    "changelogDate": "20200323011600",
+    "entityTableName": "lugar_gps",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "inspeccion",
+    "applications": "*",
+    "microserviceName": "inspeccion"
+}
