@@ -9,7 +9,19 @@ servers:
     description: Development server
   - url: https://localhost:8081/api
     description: Development server with TLS Profile
-paths: {}
+paths:
+  /obtenerHojaRutaAleatoria:
+    get:
+      description: Retorna ana lista de hojas de hojas de tura aleatorias (sin asignar).
+      responses:
+        '200':
+          description: Una lista de hojas de hojas de tura aleatorias (sin asignar).
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/hojaRutaAleatoria'
 components:
   responses:
     Problem:
@@ -18,7 +30,29 @@ components:
         'application/problem+json':
           schema:
             $ref: 'https://opensource.zalando.com/problem/schema.yaml#/Problem'
-
+  schemas:
+    hojaRutaAleatoria:
+      properties:
+        id:
+          type: integer
+          description: ID de la hoja de ruta
+        tipoInspecion:
+          type: string
+        fecha:
+          type: string
+          description: Fecha de la inspeccion agendada
+        fechaHora:
+          type: string
+          description: Fecha y hora de la inspeccion agendada
+        titulo:
+          type: string
+          description: Nombre de la inspeccion
+        descripcion:
+          type: string
+          description: Descripcion de la inspeccion
+        prioridad:
+          type: integer
+          description: Prioridad de la inspeccion
   securitySchemes:
     jwt:
       type: http
