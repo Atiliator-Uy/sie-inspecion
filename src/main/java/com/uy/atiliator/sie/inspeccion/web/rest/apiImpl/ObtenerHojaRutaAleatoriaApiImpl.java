@@ -9,8 +9,10 @@ import com.uy.atiliator.sie.inspeccion.web.api.model.HojaRutaAleatoria;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,10 +30,10 @@ public class ObtenerHojaRutaAleatoriaApiImpl implements ObtenerHojaRutaAleatoria
         log.debug("Atiliator ---> ObtenerHojaRutaAleatoriaApiImpl.obtenerHojaRutaAleatoriaGet");
         List<HojaRuta> hojasRuta = hojaRutaRepository.findAll();
         log.debug("Atiliator ---> hojasRuta.isEmpty()? " + hojasRuta.isEmpty());
-        if (!hojasRuta.isEmpty()) {
+        if (hojasRuta.isEmpty()) {
             return ResponseEntity.ok().body(buscarRandom(hojasRuta));
         } else {
-            return null;
+            throw new hojaRutaNotFoundException();
         }
     }
 
@@ -47,16 +49,20 @@ public class ObtenerHojaRutaAleatoriaApiImpl implements ObtenerHojaRutaAleatoria
     }
 
     private HojaRutaAleatoria createHojaRutaAletatoria(HojaRuta hojaRuta) {
-        HojaRutaAleatoria response = new HojaRutaAleatoria();
-
-        response.setId(hojaRuta.getId().intValue());
-        response.descripcion(hojaRuta.getDescripcion());
-        response.tipoInspecion(hojaRuta.getTipoInspeccion().name());
-        response.fecha(hojaRuta.getFecha().toString());
-        response.fechaHora(hojaRuta.getFechaHoraUTC().toString());
-        response.titulo(hojaRuta.getTitulo());
-        response.prioridad(hojaRuta.getPriodidad());
-
+        HojaRutaAleatoria response = new HojaRutaAleatoria()
+            .id(hojaRuta.getId().intValue())
+            .descripcion(hojaRuta.getDescripcion())
+            .tipoInspecion(hojaRuta.getTipoInspeccion().name())
+            .fecha(hojaRuta.getFecha().toString())
+            .fechaHora(hojaRuta.getFechaHoraUTC().toString())
+            .titulo(hojaRuta.getTitulo())
+            .prioridad(hojaRuta.getPriodidad())
+            ;
         return response;
     }
+
+    @ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "Ho hay hojas de rutas diponibles")
+    public class hojaRutaNotFoundException extends RuntimeException {
+    }
+
 }

@@ -12,10 +12,10 @@ servers:
 paths:
   /obtenerHojaRutaAleatoria:
     get:
-      description: Retorna ana lista de hojas de hojas de tura aleatorias (sin asignar).
+      description: Retorna una lista de hojas de hojas de tura aleatorias (sin asignar).
       responses:
         '200':
-          description: Una lista de hojas de hojas de tura aleatorias (sin asignar).
+          description: Una lista de hojas de hojas de ruta aleatorias (sin asignar).
           content:
             application/json:
               schema:
