@@ -30,7 +30,7 @@ public class ObtenerHojaRutaAleatoriaApiImpl implements ObtenerHojaRutaAleatoria
         log.debug("Atiliator ---> ObtenerHojaRutaAleatoriaApiImpl.obtenerHojaRutaAleatoriaGet");
         List<HojaRuta> hojasRuta = hojaRutaRepository.findAll();
         log.debug("Atiliator ---> hojasRuta.isEmpty()? " + hojasRuta.isEmpty());
-        if (hojasRuta.isEmpty()) {
+        if (!hojasRuta.isEmpty()) {
             return ResponseEntity.ok().body(buscarRandom(hojasRuta));
         } else {
             throw new hojaRutaNotFoundException();
